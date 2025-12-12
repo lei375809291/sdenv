@@ -1,5 +1,13 @@
 
 
+## [1.1.0](https://github.com/pysunday/sdenv/compare/v1.0.2...v1.1.0) (2025-12-12)
+
+
+### Features
+
+* 增加document.all === undefined测试用例 ([f0a5242](https://github.com/pysunday/sdenv/commit/f0a5242da97a0a7b8854fed65c54177ef9566710))
+* 新版本适配及代码优化 ([8dc979e](https://github.com/pysunday/sdenv/commit/8dc979e0e2d2ed0b46428fa9844b6e4689146760))
+
 ## [1.0.2](https://github.com/pysunday/sdenv/compare/v1.0.0...v1.0.2) (2025-10-30)
 
 
