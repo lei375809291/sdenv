@@ -1,5 +1,12 @@
 
 
+## [1.1.1](https://github.com/pysunday/sdenv/compare/v1.1.0...v1.1.1) (2025-12-13)
+
+
+### Bug Fixes
+
+* windows报错问题修复 ([1bb4b2b](https://github.com/pysunday/sdenv/commit/1bb4b2bda7b691d317141c9ce15f3efd762eb03b))
+
 ## [1.1.0](https://github.com/pysunday/sdenv/compare/v1.0.2...v1.1.0) (2025-12-12)
 
 
