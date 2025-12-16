@@ -1,5 +1,12 @@
 
 
+## [1.1.2](https://github.com/pysunday/sdenv/compare/v1.1.1...v1.1.2) (2025-12-16)
+
+
+### Bug Fixes
+
+* check 命令增加代理配置、主体代码modules-alias导入改成相对导入 ([8e92dbe](https://github.com/pysunday/sdenv/commit/8e92dbe85bae6e3c992d0fa65bdf2a8069ad9432))
+
 ## [1.1.1](https://github.com/pysunday/sdenv/compare/v1.1.0...v1.1.1) (2025-12-13)
 
 
