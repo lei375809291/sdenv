@@ -25,27 +25,28 @@ sdenv是一个javascript运行时补环境框架，与github上其它补环境�
 
 ## 依赖
 
-作者开发时使用的是`v20.19.5`版本Node，由于jsdom27版本需要Node支持ESM，但是v20仅部分支持ESM，因此如果您也使用v20版本，请使用最新的，如当前最新为`v20.19.5`
+作者开发时使用的是`v20.19.5`版本Node，Mac系统Node版本支持情况（测试使用example/use-check命令） [点击反馈](https://github.com/pysunday/sdenv/discussions/22):
 
-编译node插件用的是[node-gyp](https://github.com/nodejs/node-gyp)工具，该工具需要有python环境和c环境(如windows系统需安装Visual Studio，Mac系统需要安装XCode)，请根据[工具文档](https://github.com/nodejs/node-gyp)进行系统环境搭建。
+Node版本 | 是否支持
+-------- | --------
+v20.19.5 | ✅
+v21.7.3 | ❌
+v22.21.1 | ✅
+v23.11.1 | ✅
+v24.12.0 | ✅
+v25.2.1 | ✅
+
+编译node插件用的是[node-gyp](https://github.com/nodejs/node-gyp)工具，该工具需要有python环境和c环境(如windows系统需安装Visual Studio，Mac系统需要安装XCode)，请根据[工具文档](https://github.com/nodejs/node-gyp)进行系统环境搭建，完成后自行执行`npm i -g node-gyp`安装。
 
 **需要注意windows中安装Visual Studio时需要勾选`使用C++的桌面开发`选项**
 
-![安装Visual Studio注意](./static/vs-tip.png)
+![安装Visual Studio注意](https://private-user-images.githubusercontent.com/37856796/529144904-5864a84b-e7c5-4481-bfa1-c079dfad0300.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjY0MDA2MTcsIm5iZiI6MTc2NjQwMDMxNywicGF0aCI6Ii8zNzg1Njc5Ni81MjkxNDQ5MDQtNTg2NGE4NGItZTdjNS00NDgxLWJmYTEtYzA3OWRmYWQwMzAwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTEyMjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUxMjIyVDEwNDUxN1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWFkN2IyMDllNjc2MzA1YjY0NzZkZDY4MjQwNWU1OGEwMzJiM2Y2OTY3NWM2NzNmMGU2MmUyMjE3NjljNzlkM2MmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.9BcpGfvMJLJ4dFQCMJZ4dGjT-sLsMuTBS7u4ZU1r2mU)
 
-## 可能出现的问题
+## 报错收集
 
-1. npm安装node-gyp报错：请确保操作系统有c++编译环境与python环境，报错示例（感谢用户风流小混沌提供报错图片）:
-![npm安装报错](./static/install-error.jpeg)
-2. 安装缓慢及canvas报错(**基本都是网络问题**)：由于canvas安装会优先从github获取现成的包，因此请在安装前先设置代理或者其它国内源，如果安装仍然失败请使用npm官方源+代理方式重新尝试；
-3. 旧式TLS Renegotiation不支持报错（目标网站服务器使用旧版OpenSSL，新版node不支持），这个报错纯node层无法解决，需使用抓包工具中转，调用命令时设置环境变量proxy的值，mac命令如`proxy=http://127.0.0.1:8888 node example/use-check/index.js 目标网站`，docker命令如：` docker run -e proxy=http://host.docker.internal:8888 --rm pysunday/sdenv-arm64 check 目标网站`
-![TLS Renegotiation报错](./static/ssl-error.png)
-
-注意：canvas安装失败不会中断安装，但是在运行时，如果网页代码中有调用canvas相关API会报错，如有使用canvas相关api请务必确认安装成功！
+常见报错已经放到discussions中, 点击链接查看: [报错收集](https://github.com/pysunday/sdenv/discussions?discussions_q=%E6%8A%A5%E9%94%99%E6%94%B6%E9%9B%86)
 
 **解决完报错后记得重新执行下依赖安装！如不确定是否本地问题，可以先以docker方式运行和验证！**
-
-有其它问题请提issues！
 
 ## 使用
 
